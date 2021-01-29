@@ -9,7 +9,7 @@ type: kubernetes.io/dockerconfigjson
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: mydeployment
 spec:
   replicas: 1
   selector:
@@ -29,3 +29,5 @@ spec:
         env:
           - name: MH_ADDR_L3
             value: 169.254.1.30
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
