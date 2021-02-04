@@ -10,7 +10,7 @@ type: kubernetes.io/dockerconfigjson
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cicd-deployment
+  name: l3-deployment
   namespace: ns-cicd
 spec:
   replicas: 1
