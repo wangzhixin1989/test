@@ -10,7 +10,7 @@ type: kubernetes.io/dockerconfigjson
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: l3-deployment
+  name: cicd-deployment
   namespace: ns-cicd
 spec:
   replicas: 1
@@ -28,7 +28,7 @@ spec:
       - name: harbor-secret
       containers:
       - name: cd-l3
-        image: 192.168.26.50/cicd/adpt:00.00001
+        image: 192.168.26.50/cicd/l3:00.00001
         imagePullPolicy: Always
         command: [ "/bin/bash", "-c", "--" ]
 #        args: [ "cd /msyssrv/lm/ap/bin/; LD_LIBRARY_PATH=../lib ./gnb_cu_oam ../cfg/Proprietary_gNodeB_CU_Data_Model.xml ../cfg/TR196_gNodeB_CU_Data_Model.xml" ]
